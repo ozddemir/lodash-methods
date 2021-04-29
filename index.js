@@ -104,5 +104,23 @@ console.log(_.map(stringKelimeler, _.kebabCase));
 console.log(_.map(stringKelimeler, _.lowerCase));
 console.log(_.map(stringKelimeler, _.upperCase));
 
+/* .startsWith ve .endsWith */
+/* Bu metodlar ile belirlenen harf ile başlayan ya da biten dizi elemanları alınabilir*/ 
+const kelimeDizi = ["tank", "bilge", "turist", "tip",
+"pembe", "ceylan", "mart", "sol", "pil",
+"iki", "asıl"]
+console.log("t ile başlayan elemanlar")
+kelimeDizi.forEach(q => {
+    if(_.startsWith(q, 't')){
+        console.log(q)
+    }
+})
+
+console.log("l ile biten elemanlar")
+kelimeDizi.forEach(q => {
+    if(_.endsWith(q, 'l')){
+        console.log(q)
+    }
+})
 
 
