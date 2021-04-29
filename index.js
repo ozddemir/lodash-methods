@@ -88,4 +88,10 @@ const yeniDizi = _.pull(sayiDizisi, 3, 5, 7)
 /* Yeni dizide 3 5 ve 7 elemanları bulunmayaccak */
 console.log(yeniDizi)
 
+/* sum */
+/* Bir dizideki sayıları toplamaya yarar */
+let toplanacakSayilar = [4, -5, 3, 2, -1, 7, -6, 8, 9];
+const toplamaSonucu = _.sum(toplanacakSayilar);
+console.log(`Toplama sonucu: ${toplamaSonucu}`)
+
 
