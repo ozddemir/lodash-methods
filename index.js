@@ -88,10 +88,21 @@ const yeniDizi = _.pull(sayiDizisi, 3, 5, 7)
 /* Yeni dizide 3 5 ve 7 elemanları bulunmayaccak */
 console.log(yeniDizi)
 
-/* sum */
+/* .sum */
 /* Bir dizideki sayıları toplamaya yarar */
 let toplanacakSayilar = [4, -5, 3, 2, -1, 7, -6, 8, 9];
 const toplamaSonucu = _.sum(toplanacakSayilar);
 console.log(`Toplama sonucu: ${toplamaSonucu}`)
+
+/* lodash string metodlar */
+/* .camelCase .capitalize .kebabCase .lowerCase .upperCase metodları ile string operasyonları  */
+
+const stringKelimeler = ["gökyüzü", "Güneş", "Mavi Balina"];
+console.log(_.map(stringKelimeler, _.camelCase));
+console.log(_.map(stringKelimeler, _.capitalize));
+console.log(_.map(stringKelimeler, _.kebabCase));
+console.log(_.map(stringKelimeler, _.lowerCase));
+console.log(_.map(stringKelimeler, _.upperCase));
+
 
 
