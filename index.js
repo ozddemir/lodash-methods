@@ -3,10 +3,9 @@ const _ = require('lodash');
 
 /** Array Metodları **/
 
-const kelimeler = ['orman', 'kıta', 'toprak', 'dalga', 'okyanus', 'deniz', 'evren'];
-
 /* .first */
 /* Dizinin ilk elemanını */
+const kelimeler = ['orman', 'kıta', 'toprak', 'dalga', 'okyanus', 'deniz', 'evren'];
 const ilkKelime = _.first(kelimeler);
 console.log(`Kelimeler dizisinin ilk elemanı: ${ilkKelime}`)
 
@@ -61,7 +60,7 @@ let tamSayilar = [4, -5, 3, 2, -1, 7, -6, 8, 9];
 let pozitifSayilar = _.filter(tamSayilar, q => q > 0);
 console.log(pozitifSayilar);
 
-/* .find */
+/* .find  .includes .orderBy */
 /* Belirtilen koşula göre ilgili sonucu döndürür */
 let kisiler = [
     { 'isim': 'ali', yas: '42' },
@@ -81,6 +80,28 @@ console.log(sonuc);
 /* Korhan kişisini bulmak */
 let korhan = _.find(kisiler, { isim: 'korhan' });
 console.log(korhan);
+console.log("****************************")
+
+/* .includes metodu girilen kelimenin geçtiği diziyi döndürür */
+let arananKelime = "eli"
+let aramaSonucu = [];
+kisiler.forEach(q => {
+    if (_.includes(q.isim, arananKelime)) {
+        aramaSonucu.push(q)
+    }
+})
+console.log("isminde eli içeren diziler");
+console.log(aramaSonucu)
+
+/* .orderBy */
+/* bu method ile verilen obje veya diziyi sıralayabilirsiniz */
+const artanSiralama = _.orderBy(kisiler, ['isim'], ['asc']);
+console.log("isimler artan sırada sıralanır")
+console.log(artanSiralama)
+
+const azalanSiralama = _.orderBy(kisiler, ['yas'], ['desc']);
+console.log("yas azalan değerde sıralanır")
+console.log(azalanSiralama)
 
 /* .pull verilen tüm değerleri diziden siler */
 const sayiDizisi = [1, 2, 3, 1, 2, 2, 4, 5, 7, 8];
@@ -105,20 +126,20 @@ console.log(_.map(stringKelimeler, _.lowerCase));
 console.log(_.map(stringKelimeler, _.upperCase));
 
 /* .startsWith ve .endsWith */
-/* Bu metodlar ile belirlenen harf ile başlayan ya da biten dizi elemanları alınabilir*/ 
+/* Bu metodlar ile belirlenen harf ile başlayan ya da biten dizi elemanları alınabilir*/
 const kelimeDizi = ["tank", "bilge", "turist", "tip",
-"pembe", "ceylan", "mart", "sol", "pil",
-"iki", "asıl"]
+    "pembe", "ceylan", "mart", "sol", "pil",
+    "iki", "asıl"]
 console.log("t ile başlayan elemanlar")
 kelimeDizi.forEach(q => {
-    if(_.startsWith(q, 't')){
+    if (_.startsWith(q, 't')) {
         console.log(q)
     }
 })
 
 console.log("l ile biten elemanlar")
 kelimeDizi.forEach(q => {
-    if(_.endsWith(q, 'l')){
+    if (_.endsWith(q, 'l')) {
         console.log(q)
     }
 })
