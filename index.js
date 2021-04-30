@@ -61,7 +61,6 @@ let pozitifSayilar = _.filter(tamSayilar, q => q > 0);
 console.log(pozitifSayilar);
 
 /* .find  .includes .orderBy */
-/* Belirtilen koşula göre ilgili sonucu döndürür */
 let kisiler = [
     { 'isim': 'ali', yas: '42' },
     { 'isim': 'veli', yas: '18' },
@@ -70,6 +69,7 @@ let kisiler = [
     { 'isim': 'esma', yas: '58' },
     { 'isim': 'korhan', yas: '60' }
 ];
+/* .find Belirtilen koşula göre ilgili sonucu döndürür */
 /* Yaşı 45'den yüksek olan ilk kişi */
 let sonuc = _.find(kisiler, q => {
     if (q.yas > 45) {
